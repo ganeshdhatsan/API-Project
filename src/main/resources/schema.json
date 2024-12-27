@@ -1,0 +1,304 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/Welcome9",
+    "definitions": {
+        "Welcome9": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "user": {
+                    "$ref": "#/definitions/User"
+                },
+                "profile": {
+                    "$ref": "#/definitions/Profile"
+                },
+                "transactions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Transaction"
+                    }
+                },
+                "metadata": {
+                    "$ref": "#/definitions/Metadata"
+                }
+            },
+            "required": [
+                "metadata",
+                "profile",
+                "transactions",
+                "user"
+            ],
+            "title": "Welcome9"
+        },
+        "Metadata": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ipAddress": {
+                    "type": "string"
+                },
+                "userAgent": {
+                    "type": "string"
+                },
+                "lastLogin": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "permissions": {
+                    "$ref": "#/definitions/Permissions"
+                }
+            },
+            "required": [
+                "ipAddress",
+                "lastLogin",
+                "permissions",
+                "userAgent"
+            ],
+            "title": "Metadata"
+        },
+        "Permissions": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "canEdit": {
+                    "type": "boolean"
+                },
+                "canDelete": {
+                    "type": "boolean"
+                },
+                "modules": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "canDelete",
+                "canEdit",
+                "modules"
+            ],
+            "title": "Permissions"
+        },
+        "Profile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "bio": {
+                    "type": "string"
+                },
+                "socialLinks": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SocialLink"
+                    }
+                },
+                "preferences": {
+                    "$ref": "#/definitions/Preferences"
+                }
+            },
+            "required": [
+                "bio",
+                "preferences",
+                "socialLinks"
+            ],
+            "title": "Profile"
+        },
+        "Preferences": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "language": {
+                    "type": "string"
+                },
+                "theme": {
+                    "type": "string"
+                },
+                "notifications": {
+                    "$ref": "#/definitions/Notifications"
+                }
+            },
+            "required": [
+                "language",
+                "notifications",
+                "theme"
+            ],
+            "title": "Preferences"
+        },
+        "Notifications": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "email": {
+                    "type": "boolean"
+                },
+                "sms": {
+                    "type": "boolean"
+                },
+                "push": {
+                    "$ref": "#/definitions/Push"
+                }
+            },
+            "required": [
+                "email",
+                "push",
+                "sms"
+            ],
+            "title": "Notifications"
+        },
+        "Push": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "enabled": {
+                    "type": "boolean"
+                },
+                "sound": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "enabled",
+                "sound"
+            ],
+            "title": "Push"
+        },
+        "SocialLink": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "platform": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ]
+                },
+                "username": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "platform",
+                "url",
+                "username"
+            ],
+            "title": "SocialLink"
+        },
+        "Transaction": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number"
+                },
+                "currency": {
+                    "type": "string"
+                },
+                "date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "details": {
+                    "$ref": "#/definitions/Details"
+                }
+            },
+            "required": [
+                "amount",
+                "currency",
+                "date",
+                "details",
+                "id",
+                "status"
+            ],
+            "title": "Transaction"
+        },
+        "Details": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "method": {
+                    "type": "string"
+                },
+                "last4": {
+                    "type": "string",
+                    "format": "integer"
+                },
+                "issuer": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "method"
+            ],
+            "title": "Details"
+        },
+        "User": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "$ref": "#/definitions/Name"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "isVerified": {
+                    "type": "boolean"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "roles": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "createdAt",
+                "email",
+                "id",
+                "isVerified",
+                "name",
+                "roles"
+            ],
+            "title": "User"
+        },
+        "Name": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "first": {
+                    "type": "string"
+                },
+                "last": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "first",
+                "last"
+            ],
+            "title": "Name"
+        }
+    }
+}
+

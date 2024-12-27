@@ -1,0 +1,75 @@
+{
+  "user": {
+    "id": 12345,
+    "name": {
+      "first": "John",
+      "last": "Doe"
+    },
+    "email": "john.doe@example.com",
+    "isVerified": true,
+    "createdAt": "2023-06-15T12:34:56Z",
+    "roles": ["admin", "editor"]
+  },
+  "profile": {
+    "bio": "Software developer with a passion for open-source projects.",
+    "socialLinks": [
+      {
+        "platform": "Twitter",
+        "url": "https://twitter.com/johndoe",
+        "username": "johndoe"
+      },
+      {
+        "platform": "LinkedIn",
+        "url": "https://linkedin.com/in/johndoe",
+        "username": "johndoe"
+      }
+    ],
+    "preferences": {
+      "language": "en-US",
+      "theme": "dark",
+      "notifications": {
+        "email": true,
+        "sms": false,
+        "push": {
+          "enabled": true,
+          "sound": "chime"
+        }
+      }
+    }
+  },
+  "transactions": [
+    {
+      "id": "tx1001",
+      "amount": 150.5,
+      "currency": "USD",
+      "date": "2024-12-25T08:00:00Z",
+      "status": "completed",
+      "details": {
+        "method": "credit_card",
+        "last4": "1234",
+        "issuer": "Visa"
+      }
+    },
+    {
+      "id": "tx1002",
+      "amount": 75.0,
+      "currency": "USD",
+      "date": "2024-12-20T14:30:00Z",
+      "status": "pending",
+      "details": {
+        "method": "paypal",
+        "email": "paypal-user@example.com"
+      }
+    }
+  ],
+  "metadata": {
+    "ipAddress": "192.168.1.1",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36",
+    "lastLogin": "2024-12-24T18:00:00Z",
+    "permissions": {
+      "canEdit": true,
+      "canDelete": false,
+      "modules": ["dashboard", "reports", "settings"]
+    }
+  }
+}
